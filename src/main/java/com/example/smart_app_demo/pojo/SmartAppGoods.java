@@ -2,6 +2,7 @@ package com.example.smart_app_demo.pojo;
 
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Date;
  * @creatr 2021-11-04-10:28
  */
 @Data
-public class SmartAppGoods {
+public class SmartAppGoods implements Serializable {
     private long goodsId;
     private int goodsType;
     private String goodsName;
