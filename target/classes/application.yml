@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: student
+    password: B%Xzkh93VK&
+    url: jdbc:mysql://rm-bp1ru7571u9z6o1x7go.mysql.rds.aliyuncs.com:3306/pigx_demo?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com/example/smart_app_demo/pojo

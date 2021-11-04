@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.smart_app_demo.mapper.GoodsCategoryMapper">
+
+    <resultMap id="ResultMap" type="com.example.smart_app_demo.pojo.SmartAppGoodsCategory">
+        <id column="goods_category_id" property="goodsCategoryId" />
+        <result column="goods_category_name" property="goodsCategoryName" />
+        <result column="type" property="type" />
+        <result column="state" property="state" />
+        <result column="create_user_id" property="createUserId" />
+        <result column="create_time" property="createTime" />
+        <result column="tenant_id" property="tenantId" />
+        <result column="snow_id" property="snowId" />
+    </resultMap>
+
+    <select id="getList" resultMap="ResultMap">
+        select * from smart_app_goods_category
+    </select>
+    <select id="getById" resultMap="ResultMap">
+        select * from smart_app_goods_category where goods_category_id = #{id}
+    </select>
+    <insert id="add">
+        insert into smart_app_goods_category value
+            (#{goodsCategoryId},#{goodsCategoryName},#{type},#{state},
+            #{createUserId},#{createTime},#{tenantId},#{snowId})
+    </insert>
+    <update id="update" >
+        update smart_app_goods_category
+        set goods_category_name=#{goodsCategoryName},
+            type=#{type},state=#{state},create_user_id=#{createUserId},create_time=#{createTime},
+            tenant_id=#{tenantId},snow_id=#{snowId} where goods_category_id=#{goodsCategoryId}
+    </update>
+    <delete id="delete">
+        delete from smart_app_goods_category where goods_category_id=#{id}
+    </delete>
+</mapper>
